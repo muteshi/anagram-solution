@@ -5,8 +5,10 @@ def create_dictionary():
     anagram_dict={}
     with open("dictionary.txt") as my_dict:
         for line in my_dict:
+            # Strip newlines, convert to list then sort the string
             line = sorted(list(line.rstrip()))
-            word = "".join(line)
+            word = "".join(line) # Re create the string from the list
+            # if word in dictionary increment its count
             if word in anagram_dict:
                 anagram_dict[word] += 1
             else:
